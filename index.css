@@ -55,7 +55,7 @@ background-color:rgb(146, 146, 146);}
 
 .welcometext{font-size: 50px;
     color: whitesmoke;
-    animation: 2s ease-out 1s 1 slideInFromLeft;
+    animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 
 .jesustitle{
