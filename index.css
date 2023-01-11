@@ -144,3 +144,36 @@ border-bottom-right-radius: 5px;
 }
 
 .linkedInLogo:hover{background-color: transparent!important;}
+
+#selfWelcomePic{display: none;}
+
+@media only screen and (max-width: 600px) {
+    .welcometext {
+      font-size: x-large;
+      width: 70%;
+      text-align: center;
+    }
+    .welcome{
+       
+        height: 800px;
+    }
+    #selfPic{
+        display:none;
+    }
+    #selfWelcomePic{
+        display:contents;
+        max-width: 30%;
+    }
+    .linkedInLogo{display: none;}
+
+    .about{width: 70%;
+        text-align: center;
+     padding-top: 75px;
+     height: 800px;
+    }
+    .aboutDesc{align-self: center;
+        float:right;}
+    .sizeOfText{width: 100%;
+        display: flex;}
+    
+  }
