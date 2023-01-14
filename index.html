@@ -11,20 +11,20 @@
  <main>
  <header>
      <div class="navbar">
+      <a class="nav-close" onclick="toggleNav()">
+        <img src="menu.png" class="menuIcon" alt="Menu" /></a>    
   <nav class="nav1">
-    <a id="navs" href="#about">About Me</a>
-    <a id="navs" href="#projects">Projects</a>
-    <a id="navs" href="#">Contact Me</a>
-   
+    <a id="navs" class="navLinks" href="#about" onclick="toggleNav()">About Me</a>
+    <a id="navs" class="navLinks" href="#projects" onclick="toggleNav()">Projects</a>
+    <a id="navs" class="navLinks" href="#" onclick="toggleNav()">Contact Me</a>
   </nav> 
   <p id ="navs" class="jesustitle">Software Developer</p>
 </div> 
 </header>
 <!--Welcome Section-->
 <div class="welcome">
-  <p class="welcometext">Welcome. My name is Jesus Martinez.</p>
-
-  <img src="picture.jpeg" id="selfWelcomePic" alt="Picture of Jesus"/>
+    <p class="welcometext">Welcome. My name is Jesus Martinez.</p>
+    <img src="picture.jpeg" id="selfWelcomePic" alt="Picture of Jesus"/>
 
 </div>
 <!--About Section-->
@@ -40,7 +40,7 @@
 <p class="category">Technical:</p>
 <p>HTML5 - CSS3 - JavaScript - Python - Git & Github - React.js - Flask</p>
 <p class="category">Soft Skills:</p>
-<p>Team Player - User Oriented - Clear Communicator - Detail Oriented</p>
+<p>Team Player - User Oriented - Clear Communicator - Detail Oriented - Reliable</p>
 <p id="space"></p>
 <a class="linkedInLogo" href="https://www.linkedin.com/in/jesusmse/" target="_blank">
 <img src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="LinkedIn Profile" id="linkedIn"/>
@@ -65,5 +65,12 @@
 </div>
 </div>
    </main>
+   <script>
+    function toggleNav() {
+      document.body.classList.toggle("nav-open");
+    }
+  </script>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
    </body>
 </html>
