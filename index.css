@@ -20,15 +20,12 @@ body{
     box-shadow: 0 2px 5px ;
 }
 
-a:link{color: white;}
-
 a:hover{ background-color: gray;}
 
-a:visited{color: white;}
-
-.navbar a{float: left;
+.navbar a{
 margin-left: 50px;
 text-decoration: none;
+
 }
 
 .navbar a:hover{background-color: transparent!important;
@@ -40,7 +37,7 @@ text-decoration: none;
     align-items: center;
     flex-direction: column;
     Width: 100%;
-height: 1000px;
+height: 100vh;
 background-color:rgb(146, 146, 146);}
 
 @keyframes slideInFromLeft {
@@ -69,11 +66,12 @@ color: white;}
 height: 100%;}
 
 .about{text-align: left;
-height: 1000px;
+height: 100vh;
 width: 75%;
 padding-top:150px;
 margin-left: auto;
 margin-right: auto;
+font-size: larger;
 }
 
 .aboutTitle{font-size: 30px;}
@@ -82,7 +80,7 @@ margin-right: auto;
 }
 
 #projects{width: 100%;
-height: 1000px;
+height: 100vh;
 background-color:whitesmoke;}
 
 .sizeOfText{width: 50%;}
@@ -93,6 +91,7 @@ background-color:whitesmoke;}
     max-width: 30%;
     border-radius: 30px;
     border: solid black;
+    vertical-align: middle;
 }
 
 #linkedIn {
@@ -120,7 +119,8 @@ text-decoration: none;}
 
 .workoutApp{text-decoration: none;
     box-shadow: 0 2px 5px ; 
-    transition: all .2s ease-in-out; }
+    transition: all .2s ease-in-out;
+overflow:hidden;}
 
 .workoutApp:hover{
     transform: scale(1.1); 
@@ -148,8 +148,15 @@ border-bottom-right-radius: 5px;
 
 #selfWelcomePic{display: none;}
 
+.contactBack{width: 100%;
+    height: 50vh;
+    background-color:rgb(0, 0, 104);}
+
 @media only screen and (min-width: 600px){
    .menuIcon{display: none;}
+   .nav-close{display: none;}
+   a:visited{color:white;}
+   a:link{color: white;}
 }
 
 @media only screen and (max-width: 600px) {
@@ -160,7 +167,7 @@ border-bottom-right-radius: 5px;
     }
     .welcome{
        
-        height: 850px;
+        height: 100vh;
     }
     #selfPic{
         display:none;
@@ -176,14 +183,16 @@ border-bottom-right-radius: 5px;
     .about{width: 70%;
         text-align: center;
      padding-top: 75px;
-     height: 800px;
+     height: 100vh;
     }
     .aboutDesc{align-self: center;
         float:right;}
     .sizeOfText{width: 100%;
         display: flex;}
+    
     .menuIcon{width: 20%;
         cursor: pointer;
+        color: white;
     }
     .nav1{position: fixed;
     width: 100%;
@@ -197,11 +206,16 @@ border-bottom-right-radius: 5px;
     justify-content: center;
     align-items: center;
     transition: all .5s;
-    
-}
-    .navLinks{margin-bottom: 50px;
+    }
+    .navLinks{margin-bottom: 60px;
     margin-top: 50px;
-    margin-right: 30px;}
+    margin-right: 50px;
+    background-color: silver;
+    color: black;
+    padding: 15px 40px;
+    border-radius: 5px;
+}
+    a:active{color:white;}
     .nav-open .nav1{
         left: 0%
     }
