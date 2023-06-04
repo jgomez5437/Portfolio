@@ -9,7 +9,7 @@ body{
 }
 
 .navbar{overflow: hidden;
-    background-color: rgb(36, 156, 196);
+    background-color: rgb(48, 48, 48);
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -37,8 +37,8 @@ text-decoration: none;
     align-items: center;
     flex-direction: column;
     Width: 100%;
-height: 100vh;
-background-color:rgb(146, 146, 146);}
+    height: 100vh;
+    background-color:gainsboro;}
 
 @keyframes slideInFromLeft {
     from { opacity: 0; }
@@ -52,7 +52,7 @@ background-color:rgb(146, 146, 146);}
   }
 
 .welcometext{font-size: 50px;
-    color: whitesmoke;
+    color: black;
     animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 
@@ -81,7 +81,7 @@ font-size: larger;
 
 #projects{width: 100%;
 height: 100vh;
-background-color:whitesmoke;}
+background-color:gainsboro;}
 
 .sizeOfText{width: 50%;}
 
@@ -150,8 +150,12 @@ border-bottom-right-radius: 5px;
 
 .contactBack{width: 100%;
     height: 50vh;
-    background-color:rgb(0, 0, 104);}
+    background-color:rgb(48, 48, 48);
+    color: white;}
 
+#contactText{
+    margin-left: 55px;
+    }
 @media only screen and (min-width: 600px){
    .menuIcon{display: none;}
    .nav-close{display: none;}
@@ -183,7 +187,10 @@ border-bottom-right-radius: 5px;
     .about{width: 70%;
         text-align: center;
      padding-top: 75px;
-     height: 100vh;
+     height: 100%;
+    }
+    #aboutBack{
+        height: 400px
     }
     .aboutDesc{align-self: center;
         float:right;}
@@ -197,7 +204,7 @@ border-bottom-right-radius: 5px;
     .nav1{position: fixed;
     width: 100%;
     height: 100vh;
-    background: #2c3e50;
+    background: #535353;
     top: 80px;
     left: -100%;
     text-align: center;
@@ -219,4 +226,14 @@ border-bottom-right-radius: 5px;
     .nav-open .nav1{
         left: 0%
     }
+    .projectTitle{
+        padding-top: 0px;
+    }
+}
+
+hr{ 
+    width: 85%;
+    height: 1px;
+    background-color: #000;
+    margin: 10px auto;
 }
