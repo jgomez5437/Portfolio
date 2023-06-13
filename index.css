@@ -113,7 +113,7 @@ justify-content: space-evenly;
 align-items: center;
 text-decoration: none;}
 
-#projectApp{width: 20%;
+#projectApp{width: 18%;
 
 }
 
@@ -156,14 +156,15 @@ border-bottom-right-radius: 5px;
 #contactText{
     margin-left: 55px;
     }
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 684px){
    .menuIcon{display: none;}
    .nav-close{display: none;}
    a:visited{color:white;}
    a:link{color: white;}
+   .text_above_project{display: none;}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 684px) {
     .welcometext {
       font-size: x-large;
       width: 70%;
@@ -197,7 +198,9 @@ border-bottom-right-radius: 5px;
     .sizeOfText{width: 100%;
         display: flex;}
     
-    .menuIcon{width: 20%;
+    .menuIcon{
+        
+        width: 20%;
         cursor: pointer;
         color: white;
     }
@@ -229,6 +232,16 @@ border-bottom-right-radius: 5px;
     .projectTitle{
         padding-top: 0px;
     }
+    .listProjects{
+        flex-direction: column;
+    }
+    #projectApp{width: 70%;
+    height: 50%}
+    .workoutImg{object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;}
 }
 
 hr{ 
