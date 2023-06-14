@@ -7,7 +7,7 @@ body{
     width: 100%;
     height: 100%;
 }
-
+/*Navigation Bar-------------------------------------------------------------*/
 .navbar{overflow: hidden;
     background-color: rgb(43, 18, 151);
     position: fixed;
@@ -20,19 +20,17 @@ body{
     box-shadow: 0 2px 5px ;
     z-index: 2;
 }
-
 a:hover{ background-color: rgb(43, 18, 151);}
-
 .navbar a{
 margin-left: 50px;
 text-decoration: none;
-
 }
-
 .navbar a:hover{background-color: transparent!important;
     color: black!important;
 }
 
+/*Welcome Section----------------------------------------------------------*/
+#selfWelcomePic{display: none;}
 .welcome{display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +38,6 @@ text-decoration: none;
     Width: 100%;
     height: 100vh;
     background-color:gainsboro;}
-
 @keyframes slideInFromLeft {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -51,7 +48,6 @@ text-decoration: none;
       transform: translateX(0);
     }
   }
-
 .welcometext{font-size: 50px;
     color: black;
     animation: 3s ease-out 0s 1 slideInFromLeft;
@@ -60,83 +56,81 @@ text-decoration: none;
     font-size: 30px;
     animation: 2s ease-out 0s 1 slideInFromLeft;
 }
-
 .jesustitle{
 padding-right: 50px;
 padding-top: 22px;
 margin-top: 0;
 color: white;}
-
-.aboutBack{width: 100%;
-height: 100%;}
-
-.about{text-align: left;
-height: 100vh;
-width: 75%;
-padding-top:150px;
-margin-left: auto;
-margin-right: auto;
-font-size: larger;
-}
-
-.aboutTitle{font-size: 30px;}
-
-.aboutDesc{align-self: flex-end;
-}
-
-#projects{width: 100%;
-height: 100vh;
-background-color:gainsboro;}
-
-.sizeOfText{width: 50%;}
-
-.category{font-size: 22px;}
-
 #selfPic{float: right;
-    max-width: 30%;
+    max-width: 7.5vh;
     border-radius: 30px;
     border: solid rgb(43, 18, 151);
     vertical-align: middle;
+    margin-right: 10px;
 }
 
+/*About Section---------------------------------------------------------------*/
+.aboutBack{width: 100%;
+height: 100%;
+display: inline-flex;
+}
+.about{text-align: left;
+height: 100%;
+width: 80%;
+padding-top:100px;
+margin-left: 20vh;
+font-size: larger;
+}
+.aboutTitle{font-size: 30px;}
+.aboutDesc{align-self: flex-end;
+}
+.socials{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100vh;
+}
 #linkedIn {
     max-width: 80px;
-    margin-left: 250px;
+    margin: auto;
+    display: inline-block;
 }
+.linkedInLogo:hover{background-color: transparent!important;}
 
+/*Projects Section---------------------------------------------------------------*/
+#projects{width: 100%;
+height: 100vh;
+background-color:gainsboro;}
+.sizeOfText{width: 50%;}
+.category{font-size: 22px;}
 #space{margin-top: 120px;
 margin-bottom: 50px;}
-
 .projectTitle{text-align: center;
 padding-top: 100px;
 display:block;}
-
 .listProjects{width: 100%;
 height: 60%;
 display: flex;
 justify-content: space-evenly;
 align-items: center;
 text-decoration: none;}
-
 #projectApp{width: 18%;
-
 }
-
 .workoutApp{text-decoration: none;
     box-shadow: 0 2px 5px ; 
     transition: all .2s ease-in-out;
 overflow:hidden;}
-
 .workoutApp:hover{
     transform: scale(1.1); 
 }
-
 .workoutImg{object-fit: cover;
 width: 100%;
 height: 40vh;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;}
-
 .wAppText{text-align: center;
 background-color: navy;
 padding-top: 20px;
@@ -146,21 +140,25 @@ color: white;
 text-decoration: none!important;
 border-bottom-left-radius: 5px;
 border-bottom-right-radius: 5px;
-
 }
 
-.linkedInLogo:hover{background-color: transparent!important;}
-
-#selfWelcomePic{display: none;}
-
+/*Contact Section------------------------------------------------------------------*/
 .contactBack{width: 100%;
     height: 30vh;
     background-color:rgb(43, 18, 151);
     color: white;}
-
 #contactText{
     margin-left: 55px;
     }
+hr{ 
+        width: 85%;
+        height: 1px;
+        background-color: #000;
+        margin: 10px auto;
+    }
+
+/*Mobile Friendly------------------------------------------------------------------*/
+    /*Desktop Settings*/
 @media only screen and (min-width: 684px){
    .menuIcon{display: none;}
    .nav-close{display: none;}
@@ -168,7 +166,7 @@ border-bottom-right-radius: 5px;
    a:link{color: white;}
    .text_above_project{display: none;}
 }
-
+    /*Mobile Settings*/
 @media only screen and (max-width: 684px) {
     .welcometext {
       font-size: x-large;
@@ -194,14 +192,19 @@ border-bottom-right-radius: 5px;
         border: solid rgb(43, 18, 151);
     }
     .linkedInLogo{display: none;}
-
+    .socials{display: none;}
     .about{width: 70%;
         text-align: center;
      padding-top: 75px;
      height: 100%;
+     margin-left: auto;
+     margin-right: auto;
     }
     #aboutBack{
-        height: 400px
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .aboutDesc{align-self: center;
         float:right;}
@@ -210,7 +213,7 @@ border-bottom-right-radius: 5px;
     
     .menuIcon{
         
-        width: 20%;
+        width: 6vh;
         cursor: pointer;
         color: white;
     }
@@ -252,11 +255,4 @@ border-bottom-right-radius: 5px;
         height: 100%;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;}
-}
-
-hr{ 
-    width: 85%;
-    height: 1px;
-    background-color: #000;
-    margin: 10px auto;
 }

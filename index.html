@@ -12,50 +12,55 @@
  <header>
      <div class="navbar">
       <a class="nav-close" onclick="toggleNav()">
-        <img src="menu-4-512.png" class="menuIcon" alt="Menu" /></a>    
+        <img src="pictures/menu-4-512.png" class="menuIcon" alt="Menu" /></a>    
   <nav class="nav1">
     <a id="navs" class="navLinks" href="#about" onclick="toggleNav()">About Me</a>
     <a id="navs" class="navLinks" href="#projects" onclick="toggleNav()">Projects</a>
     <a id="navs" class="navLinks" href="#contact" onclick="toggleNav()">Contact Me</a>
   </nav> 
-  <p id ="navs" class="jesustitle">Software Engineering Student</p>
+  <img src="pictures/picture.jpeg" id="selfPic" alt="Picture of Jesus"/>
 </div> 
 </header>
-<!--Welcome Section-->
+<!--Welcome Section-------------------------------------------------------------->
 <div class="welcome">
     <p class="welcometext">Welcome. My name is Jesus Martinez.</p>
     <p class="welcome_desc">Software Engineering Student and avid learner.</p>
-    <img src="picture.jpeg" id="selfWelcomePic" alt="Picture of Jesus"/>
+    <img src="pictures/picture.jpeg" id="selfWelcomePic" alt="Picture of Jesus"/>
 
 </div>
 <hr>
-<!--About Section-->
+<!--About Section--------------------------------------------------------------->
 <div class="aboutBack" id="about">
 <div class="about">
-
   <p class="aboutTitle" class="aboutMe">About Me:</p>
   <div class="sizeOfText">
-  <p class="aboutDesc">I am a software engineering student from the sunny state of Arizona. I design and create applications and websites. 
-    My goal is to always provide high quality products with a focus on creating a great user experience.</p>
+  <p class="aboutDesc">I found a passion for software when I first discovered how in programming, logic and creativeness are intertwined, paving the way for limitless possibilities and innovative solutions. <br><br>I am a software engineering student from the sunny state of Arizona. I am currently in my sophomore year at WGU, pursuing a bachelor of science in Software Engineering.
+  <br><br>I design and create applications and websites. My goal is to always provide high quality products with a focus on creating a great user experience with a focus on accessibility, usability, and design.</p>
 </div>
-<img src="pictures/picture.jpeg" id="selfPic" alt="Picture of Jesus"/>
 <p class="aboutTitle">Skills:</p>
 <p class="category">Technical:</p>
 <p>HTML5 - CSS3 - JavaScript - Python - Git & Github - React.js - Flask</p>
 <p class="category">Soft Skills:</p>
 <p>Team Player - User Oriented - Clear Communicator - Detail Oriented - Reliable</p>
 <p id="space"></p>
-<a class="linkedInLogo" href="https://www.linkedin.com/in/jesusmse/" target="_blank">
-<img src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="LinkedIn Profile" id="linkedIn"/>
-</a>
+</div>
+<div class="socials">
+  <a class="linkedInLogo" href="https://www.linkedin.com/in/jesusmse/" target="_blank">
+    <img src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="LinkedIn Profile" id="linkedIn"/>
+    </a>
+    <a class="linkedInLogo" href="https://www.linkedin.com/in/jesusmse/" target="_blank">
+      <img src="pictures/github.png" alt="LinkedIn Profile" id="linkedIn"/>
+      </a>
 </div>
 </div>
 <hr>
-<!--Projects Section-->
+<!--Projects Section------------------------------------------------------------->
 <div id="projects" class="projectBack">
   <br/>
   <h1 class="projectTitle">Projects:</h1>
   <div class="listProjects">
+  <!--WORKOUT APP-->
+
     <p class="text_above_project">Workout Rep Counter:</p>
   <div id="projectApp" class="workoutApp">
     <a href="https://workout-app-jesusm.netlify.app" target="_blank">
@@ -63,6 +68,7 @@
     <p class="wAppText">Workout Rep Counter</p>
   </a>
   </div>
+  <!--FINTRACK-->
   <p class="text_above_project">FinTrack - Budget App:</p>
   <div id="projectApp" class="workoutApp">
     <a href="https://github.com/jgomez5437/FinTrack" target="_blank">
@@ -76,7 +82,7 @@
   <div id="projectApp" class="TBD"></div>
 </div>
 </div>
-<!--Contact Me Section-->
+<!--Contact Me Section------------------------------------------------------------->
 <div class="contactBack" id="contact">
   <br/>
   <h1 class="contactMe" id="contactText">Contact Me:</h1>
@@ -90,5 +96,6 @@
   </script>
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
    </body>
 </html>
