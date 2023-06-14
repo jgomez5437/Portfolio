@@ -12,7 +12,7 @@
  <header>
      <div class="navbar">
       <a class="nav-close" onclick="toggleNav()">
-        <img src="pictures/menu-4-512.png" class="menuIcon" alt="Menu" /></a>    
+        <img id="menuIcon" src="pictures/menu-4-512.png" class="menuIcon" alt="Menu" /></a>    
   <nav class="nav1">
     <a id="navs" class="navLinks" href="#about" onclick="toggleNav()">About Me</a>
     <a id="navs" class="navLinks2" href="#projects" onclick="toggleNav()">Projects</a>
@@ -39,7 +39,9 @@
 </div>
 <p class="aboutTitle">Skills:</p>
 <p class="category">Technical:</p>
+<div class="skills_icons">
 <p>HTML5 - CSS3 - JavaScript - Python - Git & Github - React.js - Flask</p>
+</div>
 <p class="category">Soft Skills:</p>
 <p>Team Player - User Oriented - Clear Communicator - Detail Oriented - Reliable</p>
 <p id="space"></p>
@@ -60,7 +62,6 @@
   <h1 class="projectTitle">Projects:</h1>
   <div class="listProjects">
   <!--WORKOUT APP-->
-
     <p class="text_above_project">Workout Rep Counter:</p>
   <div id="projectApp" class="workoutApp">
     <a href="https://workout-app-jesusm.netlify.app" target="_blank">
@@ -86,7 +87,6 @@
 <div class="contactBack" id="contact">
   <br/>
   <h1 class="contactMe" id="contactText">Contact Me:</h1>
-
 </div>
    </main>
    <script src="index.js"></script>  
