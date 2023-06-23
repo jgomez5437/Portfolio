@@ -124,8 +124,7 @@ font-size: larger;
 
 }
 .icon_link{
-    height: 90%;
-
+    height: 80%;
 }
 .icon_link a{
     color: transparent;
@@ -198,6 +197,9 @@ hr{
     background-color: rgb(117, 117, 117);
     border-radius: 5px;
     padding: 5px}
+    .about{
+        min-width: 525px;
+    }
 }
     /*Mobile Settings*/
 @media only screen and (max-width: 684px) {
@@ -293,4 +295,18 @@ hr{
         height: 100%;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;}
+        .skills_icons{
+            height: 100%;
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .skill_icon_edit{
+            width: 40%;
+        }
+        .icon_link{
+            width:40%;
+        }
 }
