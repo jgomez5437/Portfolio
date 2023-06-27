@@ -96,7 +96,7 @@ font-size: larger;
 .sizeOfText{width: 70%;}
 .socials{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items:center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -129,6 +129,7 @@ font-size: larger;
 .icon_link a{
     color: transparent;
 }
+
 
 /*Projects Section---------------------------------------------------------------*/
 #projects{width: 100%;
@@ -185,6 +186,10 @@ hr{
         background-color: #000;
         margin: 10px auto;
     }
+.contactinfodiv{
+    width: 100%;
+    text-align: center;
+}
 
 /*Mobile Friendly------------------------------------------------------------------*/
     /*Desktop Settings*/
@@ -289,7 +294,8 @@ hr{
         flex-direction: column;
     }
     #projectApp{width: 70%;
-    height: 50%}
+        max-width: 390px;
+    height: 100%}
     .workoutImg{object-fit: cover;
         width: 100%;
         height: 100%;
@@ -297,9 +303,9 @@ hr{
         border-top-right-radius: 5px;}
         .skills_icons{
             height: 100%;
-            width: 100%;
+            width: 80%;
             display: inline-flex;
-            justify-content: center;
+            
             align-items: center;
             flex-wrap: wrap;
         }
