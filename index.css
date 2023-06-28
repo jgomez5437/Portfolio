@@ -35,6 +35,9 @@ text-decoration: none;
     box-shadow: none;
     transition: background-color 200ms linear;
 }
+.nav_menu_color{
+    background-color: gainsboro!important;
+}
 
 /*Welcome Section----------------------------------------------------------*/
 #selfWelcomePic{display: none;}
