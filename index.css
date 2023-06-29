@@ -21,7 +21,7 @@ body{
     z-index: 2;
 }
 a:active{color: white;}
-a:link{color: white;}
+a:link{color: black;}
 .navbar a:hover{ background-color: rgb(43, 18, 151);}
 .navbar a{
 margin-left: 50px;
@@ -208,6 +208,8 @@ hr{
     .about{
         min-width: 525px;
     }
+    a:link{color:white;}
+
 }
     /*Mobile Settings*/
 @media only screen and (max-width: 684px) {
@@ -288,7 +290,8 @@ hr{
     padding: 15px 40px;
     border-radius: 5px;
 }
-    a:active{color:white;}
+#navs a:link{color:black;}
+    a:active{color:black;}
     .nav-open .nav1{
         left: 0%
     }
