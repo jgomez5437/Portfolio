@@ -1,6 +1,6 @@
 body{
     font-family: Tahoma, sans-serif;
-    background-color: gainsboro;
+    background-color: whitesmoke;
    padding: 0;
     margin: 0;
     font-size: large;
@@ -31,7 +31,7 @@ text-decoration: none;
     color: black!important;
 }
 .nav-active {
-    background-color:gainsboro;
+    background-color:whitesmoke;
     box-shadow: none;
     transition: background-color 200ms linear;
 }
@@ -47,7 +47,7 @@ text-decoration: none;
     flex-direction: column;
     Width: 100%;
     height: 100vh;
-    background-color:gainsboro;}
+    background-color:whitesmoke;}
 @keyframes slideInFromLeft {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -106,6 +106,7 @@ font-size: larger;
     width: 80%;
     height: 60vh;
 }
+
 #linkedIn {
     max-width: 80px;
     margin: auto;
@@ -137,7 +138,7 @@ font-size: larger;
 /*Projects Section---------------------------------------------------------------*/
 #projects{width: 100%;
 height: 100vh;
-background-color:gainsboro;}
+background-color:whitesmoke;}
 .category{font-size: 22px;}
 #space{margin-top: 120px;
 margin-bottom: 50px;}
@@ -255,7 +256,9 @@ hr{
         align-items: center;
     }
     .aboutDesc{align-self: center;
-        float:right;}
+        float:right;
+        border: solid rgb(43, 18, 151) 1px;
+        border-radius: 10px;}
     .aboutTitle{z-index: 7;}
     .sizeOfText{width: 100%;
         display: flex;}
@@ -280,6 +283,7 @@ hr{
     z-index: 10;
     overflow: hidden;
     font-size:medium;
+    opacity: 0.9;
     }
     .navbar{z-index: 1;}
     .navLinks, .navLinks2, .navLinks3{margin-bottom: 30px;

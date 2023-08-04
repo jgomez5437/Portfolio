@@ -34,7 +34,7 @@ function isMobileView() {
   
   // Change the background color of the element based on the viewport width
   function changeBackgroundColor() {
-    var element = document.querySelector(".nav1");
+    var element = document.querySelector(".navs");
   
     if (isMobileView()) {
       element.style.backgroundColor = "#535353"; // Change to your desired color
