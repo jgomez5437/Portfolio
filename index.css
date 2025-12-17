@@ -43,7 +43,7 @@ text-decoration: none;
 #selfWelcomePic{display: none;}
 .welcome{display: flex;
     justify-content: center;
-    align-items: center;
+    margin-left: 5vh;
     flex-direction: column;
     Width: 100%;
     height: 100vh;
@@ -75,7 +75,8 @@ padding-top: 22px;
 margin-top: 0;
 color: white;}
 #selfPic{float: right;
-    max-width: 7.5vh;
+    max-width: 6vh;
+    max-height: 90%;
     border-radius: 30px;
     border: solid rgb(43, 18, 151);
     vertical-align: middle;
@@ -84,14 +85,14 @@ color: white;}
 
 /*About Section---------------------------------------------------------------*/
 .aboutBack{width: 100%;
-height: 100%;
-display: inline-flex;
+height: 100vh;
+display: flex;
+align-items: center;
 }
-.about{text-align: left;
-height: 100%;
+.about{
+text-align: left;
 width: 80%;
-padding-top:100px;
-margin-left: 20vh;
+margin-left: 5vh;
 font-size: larger;
 }
 .aboutTitle{font-size: 30px;}
@@ -152,6 +153,7 @@ justify-content: space-evenly;
 align-items: center;
 text-decoration: none;}
 #projectApp{width: 18%;
+    
 }
 .workoutApp{text-decoration: none;
     box-shadow: 0 2px 5px ; 
@@ -162,7 +164,7 @@ overflow:hidden;}
 }
 .workoutImg{object-fit: cover;
 width: 100%;
-height: 40vh;
+height: 20vh;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;}
 .wAppText{text-align: center;
@@ -227,11 +229,18 @@ hr{
       z-index: 0;
     }
     .welcome{
-       
         height: 100vh;
+        margin: 0;
+    }
+    .welcome-content{
+        display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
     }
     #selfPic{
         display:none;
+        
     }
     #selfWelcomePic{
         display:flex;
@@ -249,12 +258,16 @@ hr{
      margin-left: auto;
      margin-right: auto;
     }
-    #aboutBack{
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    /*About Section---------------------------------------------------------------*/
+.aboutBack {
+    width: 100%;
+    min-height: 100vh; /* CHANGED from height to min-height */
+    height: auto;      /* ADDED to allow expansion */
+    display: flex;
+    align-items: center;
+    padding-top: 50px;    /* ADDED to prevent text hitting the top */
+    padding-bottom: 50px; /* ADDED to prevent text hitting the bottom */
+}
     .aboutDesc{align-self: center;
         float:right;
         border: solid rgb(43, 18, 151) 1px;
@@ -313,18 +326,22 @@ hr{
         height: 100%;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;}
-        .skills_icons{
-            height: 100%;
-            width: 80%;
-            display: inline-flex;
-            
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .skill_icon_edit{
-            width: 40%;
-        }
-        .icon_link{
-            width:40%;
-        }
+    .skills-section{
+        height: 100%;
+        display: block;
+    }
+    .skills_icons{
+        width: 80%;
+        display: inline-flex;
+        height: auto;
+        padding: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .skill_icon_edit{
+        width: 40%;
+    }
+    .icon_link{
+        width:40%;
+    }
 }
