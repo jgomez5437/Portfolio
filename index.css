@@ -108,12 +108,6 @@ font-size: larger;
     height: 60vh;
 }
 
-#linkedIn {
-    max-width: 80px;
-    margin: auto;
-    display: inline-block;
-}
-.linkedInLogo:hover{background-color: transparent!important;}
 .skills_icons{
     width: 100%;
     height: 70px;
@@ -138,8 +132,10 @@ font-size: larger;
 
 /*Projects Section---------------------------------------------------------------*/
 #projects{width: 100%;
-height: 100vh;
-background-color:whitesmoke;}
+    
+height: auto;
+background-color:whitesmoke;
+padding-bottom: 5vh;}
 .category{font-size: 22px;}
 #space{margin-top: 120px;
 margin-bottom: 50px;}
@@ -153,7 +149,7 @@ justify-content: space-evenly;
 align-items: center;
 text-decoration: none;}
 #projectApp{width: 18%;
-    
+    max-height: 320px;
 }
 .workoutApp{text-decoration: none;
     box-shadow: 0 2px 5px ; 
@@ -180,11 +176,12 @@ border-bottom-right-radius: 5px;
 
 /*Contact Section------------------------------------------------------------------*/
 .contactBack{width: 100%;
-    height: 30vh;
+    height: auto;
     background-color:rgb(43, 18, 151);
     color: white;}
 #contactText{
     margin-left: 55px;
+    font-size: 1.5em;
     }
 hr{ 
         width: 85%;
@@ -193,9 +190,22 @@ hr{
         margin: 10px auto;
     }
 .contactinfodiv{
-    width: 100%;
+    width: 90%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10vh;
 }
+.contact_info{
+    margin: 5px;
+}
+#linkedIn {
+    max-width: 4vh;
+    margin: auto;
+    display: inline-block;
+}
+.linkedInLogo:hover{background-color: transparent!important;}
 
 /*Mobile Friendly------------------------------------------------------------------*/
     /*Desktop Settings*/
@@ -320,7 +330,9 @@ hr{
     }
     #projectApp{width: 70%;
         max-width: 390px;
-    height: 100%}
+    height: 100%;
+    margin-bottom: 20px;
+}
     .workoutImg{object-fit: cover;
         width: 100%;
         height: 100%;
@@ -343,5 +355,14 @@ hr{
     }
     .icon_link{
         width:40%;
+    }
+    .contactBack{
+    height: auto;
+}
+    .contact_info{
+        margin: 0;
+    }
+    .contactinfodiv{
+        padding-bottom: 40px;
     }
 }
