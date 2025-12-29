@@ -1,48 +1,40 @@
-const navbar = document.querySelector('.navbar');
-const nav_text = document.querySelector('.navLinks')
-const nav_text2 = document.querySelector('.navLinks2')
-const nav_text3 = document.querySelector('.navLinks3')
-const menu_icon = document.querySelector('#menuIcon')
-const menu_background = document.querySelector('.nav1')
+// Mobile Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
 
-window.onscroll = () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('nav-active');
-        nav_text.classList.add('nav_link');
-        nav_text2.classList.add('nav_link');
-        nav_text3.classList.add('nav_link');
-        menu_icon.src = "pictures/menu.png"
-        menu_background.classList.add('.nav_menu_color')
-    } else {
-        navbar.classList.remove('nav-active');
-        nav_text.classList.remove('nav_link');
-        nav_text2.classList.remove('nav_link');
-        nav_text3.classList.remove('nav_link');
-        menu_icon.src = "pictures/menu-4-512.png"
-        menu_background.classList.remove('.nav_menu_color')
+// Close mobile menu when a link is clicked
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
 
+// Active Navigation on Scroll (Intersection Observer)
+// This highlights the nav link based on which section you are currently viewing
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll(".nav-list li a");
 
-    }
+const observerOptions = {
+    threshold: 0.3 // Trigger when 30% of the section is visible
 };
 
-function isMobileView() {
-        if (window.scrollY > 50) {
-            return true
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            navLi.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").substring(1) === entry.target.id) {
+                    link.classList.add("active");
+                }
+            });
         }
-    }
-  
-  // Change the background color of the element based on the viewport width
-  function changeBackgroundColor() {
-    var element = document.querySelector(".navs");
-  
-    if (isMobileView()) {
-      element.style.backgroundColor = "#535353"; // Change to your desired color
-    } else {
-      element.style.backgroundColor = "rgb(43, 18, 151)"; // Change to your desired color
-    }
-  }
-  
-  // Call the function initially and whenever the viewport changes
-  changeBackgroundColor();
-  window.addEventListener("scroll", changeBackgroundColor);
+    });
+}, observerOptions);
+
+sections.forEach((section) => {
+    observer.observe(section);
+});

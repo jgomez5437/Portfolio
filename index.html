@@ -1,125 +1,220 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jesus Gomez Martinez's Personal Portfolio" />
-  <title>Jesus Gomez Martinez's Portfolio</title>
-  <link rel="stylesheet" href="index.css" />
- </head>
- <body>
- <main>
- <header>
-     <div class="navbar">
-      <a class="nav-close" onclick="toggleNav()">
-        <img id="menuIcon" src="pictures/menu-4-512.png" class="menuIcon" alt="Menu" /></a>    
-  <nav class="nav1">
-    <a id="navs" class="navLinks" href="#about" onclick="toggleNav()">About Me</a>
-    <a id="navs" class="navLinks2" href="#projects" onclick="toggleNav()">Projects</a>
-    <a id="navs" class="navLinks3" href="#contact" onclick="toggleNav()">Contact Me</a>
-  </nav> 
-  <img src="pictures/picture.jpeg" id="selfPic" alt="Picture of Jesus"/>
-</div> 
-</header>
-<!--Welcome Section-------------------------------------------------------------->
-<div class="welcome">
-  <div class="welcome-content">
-    <p class="welcometext">Welcome. My name is Jesus Martinez.</p>
-    <p class="welcome_desc">Software Engineering Student and avid learner.</p>
-    <img src="pictures/picture.jpeg" id="selfWelcomePic" alt="Picture of Jesus"/>
-  </div>
-</div>
-<hr>
-<!--About Section--------------------------------------------------------------->
-<div class="aboutBack" id="about">
-<div class="about">
-  <p class="aboutTitle" class="aboutMe">About Me:</p>
-  <div class="sizeOfText">
-  <p class="aboutDesc">I found a passion for software when I first discovered how in programming, logic and creativeness are intertwined, paving the way for limitless possibilities and innovative solutions. <br><br>I am a software engineering student from the sunny state of Arizona. I am currently in my junior year at WGU, pursuing a bachelor of science in Software Engineering.
-  <br><br>I design and create applications and websites. My goal is to always provide high quality products with a focus on creating a great user experience with a focus on accessibility, usability, and design.</p>
-</div>
-<p class="aboutTitle">Skills:</p>
-<p class="category">Technical:</p>
-<div class="skills-section">
-  <div class="skills_icons">
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/python.png" alt="Python3"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/html.png" alt="HTML5"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/css-3.png" alt="CSS3"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/js.png" alt="JavaScript"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/atom.png" alt="React"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/flask_icon_132389.png" alt="Flask"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/icons8-git-512.png" alt="Git"></a>
-    <a href="javascript:void(0);" class="icon_link"><img class="skill_icon_edit" src="Skill Icons/github.png" alt="GitHub"></a>
-  </div>
-</div>
-<p class="category">Soft Skills:</p>
-<p>Team Player - User Oriented - Clear Communicator - Detail Oriented - Reliable</p>
-<p id="space"></p>
-</div>
-</div>
-<hr>
-<!--Projects Section------------------------------------------------------------->
-<div id="projects" class="projectBack">
-  <br/>
-  <h1 class="projectTitle">Projects:</h1>
-  <div class="listProjects">
-  <!--Life Simulator-->
-  <div id="projectApp" class="workoutApp">
-    <a href="https://startalife.vercel.app/" target="_blank">
-    <img class="workoutImg" src="pictures/lifesim.png" alt="Life Simulator Picture"/>
-    <p class="wAppText">Life Simulator</p>
-  </a>
-  </div>
-  <!--WORKOUT APP-->
-  <div id="projectApp" class="workoutApp">
-    <a href="https://workout-app-jesusm.netlify.app" target="_blank">
-    <img class="workoutImg" src="pictures/counterApp.png" alt="Workout App Picture"/>
-    <p class="wAppText">Workout Rep Counter</p>
-  </a>
-  </div>
-  <!--FINTRACK-->
-  <div id="projectApp" class="workoutApp">
-    <a href="https://github.com/jgomez5437/FinTrack" target="_blank">
-    <img class="workoutImg" src="pictures/FinTrack.png" alt="Budget App Picture"/>
-    <p class="wAppText">FinTrack</p>
-  </a>
-  </div>
-  <!--Tribute Page-->
-  <div id="projectApp" class="workoutApp">
-    <a href="https://tribute-page-mlk.netlify.app/" target="_blank">
-    <img class="workoutImg" src="pictures/mlk.png" alt="Budget App Picture"/>
-    <p class="wAppText">Tribute Page</p>
-  </a>
-  </div>
-  <!--TBD-->
-  <div id="projectApp" class="TBD"></div>
-</div>
-</div>
-<!--Contact Me Section------------------------------------------------------------->
-<div class="contactBack" id="contact">
-  <br/>
-  <h1 class="contactMe" id="contactText">Contact Me:</h1>
-  <div class="contactinfodiv"><a href="mailto:jesusmartinez5437@gmail.com"><p class="contact_info">jesusmartinez5437@gmail.com</p></a>
-  <p class="contact_info">520-589-9628</p>
-<div>
-  <a class="linkedInLogo" href="https://www.linkedin.com/in/jesusmse/" target="_blank">
-    <img src="https://www.freeiconspng.com/uploads/linkedin-logo-3.png" alt="LinkedIn Profile" id="linkedIn"/>
-    </a>
-    <a class="linkedInLogo" href="https://github.com/jgomez5437" target="_blank">
-      <img src="Skill Icons/github.png" alt="LinkedIn Profile" id="linkedIn"/>
-      </a>
-    </div>
-    </div>
-  </div>
-   </main>
-   <script src="index.js"></script>  
-   <script>
-    function toggleNav() {
-      document.body.classList.toggle("nav-open");
-    }
-  </script>
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-   <script src=" https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js "></script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jesus Gomez Martinez - Software Engineer Portfolio" />
+    <title>Jesus Gomez Martinez | Software Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Jesus<span>.dev</span></a>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="subtitle">Hello, I am</p>
+                    <h1>Jesus Martinez</h1>
+                    <h2>Software Engineering Student</h2>
+                    <p class="description">
+                        Building logic-driven applications with a focus on accessibility, usability, and clean design.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="pictures/picture.jpeg" alt="Jesus Martinez">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I found a passion for software when I first discovered how programming intertwines logic and creativity. 
+                            I am a Software Engineering student at <strong>Western Governors University</strong>, currently in my junior year.
+                        </p>
+                        <p>
+                            My goal is to provide high-quality products focusing on user experience. I am a detail-oriented team player based in sunny Arizona.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <ion-icon name="logo-python"></ion-icon>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-html5"></ion-icon>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-css3"></ion-icon>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="color-palette-outline"></ion-icon>
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-javascript"></ion-icon>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-react"></ion-icon>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="flask"></ion-icon> 
+                        <span>Flask</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-nodejs"></ion-icon> 
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="server-outline"></ion-icon> 
+                        <span>PostgreSQL</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <ion-icon name="paper-plane-outline"></ion-icon> 
+                        <span>Postman</span>
+                    </div>
+                    <div class="skill-card">
+                        <ion-icon name="logo-github"></ion-icon>
+                        <span>Git/GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="pictures/lifesim.png" alt="Life Simulator Interface">
+                        </div>
+                        <div class="project-info">
+                            <h3>Life Simulator</h3>
+                            <p>A full-stack simulation game.</p>
+                            <div class="project-links">
+                                <a href="https://startalife.vercel.app/" target="_blank" class="btn-small">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="pictures/counterApp.png" alt="Workout App Interface">
+                        </div>
+                        <div class="project-info">
+                            <h3>Workout Rep Counter</h3>
+                            <p>Track your fitness progress effortlessly.</p>
+                            <div class="project-links">
+                                <a href="https://workout-app-jesusm.netlify.app" target="_blank" class="btn-small">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="pictures/FinTrack.png" alt="FinTrack Interface">
+                        </div>
+                        <div class="project-info">
+                            <h3>FinTrack</h3>
+                            <p>Budgeting application built with Angular & Flask.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/jgomez5437/FinTrack" target="_blank" class="btn-small">View Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="pictures/mlk.png" alt="Tribute Page Interface">
+                        </div>
+                        <div class="project-info">
+                            <h3>Tribute Page</h3>
+                            <p>A responsive tribute page design.</p>
+                            <div class="project-links">
+                                <a href="https://tribute-page-mlk.netlify.app/" target="_blank" class="btn-small">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-subtitle">I'm currently open to new opportunities.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:jesusmartinez5437@gmail.com" class="contact-item">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        jesusmartinez5437@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/jesusmse/" target="_blank" class="contact-item">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/jgomez5437" target="_blank" class="contact-item">
+                        <ion-icon name="logo-github"></ion-icon>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jesus Gomez Martinez. Built with HTML, CSS, & JS.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
 </html>
