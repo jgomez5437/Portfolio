@@ -38,3 +38,16 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
     observer.observe(section);
 });
+
+// Smooth Scroll to Top
+const scrollTopBtn = document.querySelector(".scroll-top-btn");
+
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevents the jumpy default behavior
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
