@@ -363,48 +363,83 @@ function initTiltAndSpotlight() {
 }
 
 // --------------------------------------------------------------------------
-// 5b. Interactive Hero Profile Bubbles — 2-Second Speed Boost on Click
+// 5b. Interactive Orbiting Hero Profile Bubbles — 1-Second Boost on Click
 // --------------------------------------------------------------------------
 function initProfileBubbles() {
-    const bubbles = document.querySelectorAll(".floating-chip");
+    const bubbles = Array.from(document.querySelectorAll(".floating-chip"));
     if (!bubbles.length) return;
 
+    const BASE_SPEED = 0.32; // radians/sec (~19.6s per full revolution)
+    const BOOST_SPEED = 1.85; // radians/sec during 1-second click boost
+
+    let angle = -Math.PI / 4; // Start at diagonal corners
+    let currentSpeed = BASE_SPEED;
+    let targetSpeed = BASE_SPEED;
+    let boostTimeoutId = null;
+    let lastTime = performance.now();
+
+    function getRadii() {
+        if (window.innerWidth <= 768) {
+            return { rx: 88, ry: 112 };
+        }
+        return { rx: 138, ry: 142 };
+    }
+
+    let radii = getRadii();
+    window.addEventListener(
+        "resize",
+        () => {
+            radii = getRadii();
+        },
+        { passive: true }
+    );
+
+    function triggerBoost() {
+        targetSpeed = BOOST_SPEED;
+        bubbles.forEach((b) => b.classList.add("boosted"));
+
+        if (boostTimeoutId) {
+            clearTimeout(boostTimeoutId);
+        }
+
+        boostTimeoutId = setTimeout(() => {
+            targetSpeed = BASE_SPEED;
+            bubbles.forEach((b) => b.classList.remove("boosted"));
+            boostTimeoutId = null;
+        }, 1000);
+    }
+
     bubbles.forEach((bubble) => {
-        let boostTimeoutId = null;
-
-        bubble.addEventListener("click", () => {
-            bubble.classList.add("boosted");
-
-            // Smoothly accelerate the active float animation from its current position
-            if (typeof bubble.getAnimations === "function") {
-                bubble.getAnimations().forEach((anim) => {
-                    if (typeof anim.updatePlaybackRate === "function") {
-                        anim.updatePlaybackRate(4.5);
-                    } else {
-                        anim.playbackRate = 4.5;
-                    }
-                });
-            }
-
-            if (boostTimeoutId) {
-                clearTimeout(boostTimeoutId);
-            }
-
-            boostTimeoutId = setTimeout(() => {
-                bubble.classList.remove("boosted");
-                if (typeof bubble.getAnimations === "function") {
-                    bubble.getAnimations().forEach((anim) => {
-                        if (typeof anim.updatePlaybackRate === "function") {
-                            anim.updatePlaybackRate(1);
-                        } else {
-                            anim.playbackRate = 1;
-                        }
-                    });
-                }
-                boostTimeoutId = null;
-            }, 2000);
+        bubble.addEventListener("click", (e) => {
+            e.stopPropagation();
+            triggerBoost();
         });
     });
+
+    function animateOrbit(now) {
+        const dt = Math.min((now - lastTime) / 1000, 0.1);
+        lastTime = now;
+
+        // Smoothly interpolate angular velocity toward targetSpeed
+        currentSpeed += (targetSpeed - currentSpeed) * 0.14;
+        angle = (angle + currentSpeed * dt) % (Math.PI * 2);
+
+        const stepAngle = (Math.PI * 2) / bubbles.length;
+
+        for (let i = 0; i < bubbles.length; i++) {
+            const theta = angle + i * stepAngle;
+            const x = Math.cos(theta) * radii.rx;
+            const y = Math.sin(theta) * radii.ry;
+
+            bubbles[i].style.transform = `translate3d(calc(-50% + ${x.toFixed(
+                1
+            )}px), calc(-50% + ${y.toFixed(1)}px), 0)`;
+        }
+
+        requestAnimationFrame(animateOrbit);
+    }
+
+    requestAnimationFrame(animateOrbit);
 }
 
 // --------------------------------------------------------------------------
