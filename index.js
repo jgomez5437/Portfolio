@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollReveal();
     initSkillsFilter();
     initTiltAndSpotlight();
-    initProfileBubbles();
+    initProfileAura();
     initCommandPalette();
     initCopyEmail();
     initNeuralCanvas();
@@ -363,83 +363,84 @@ function initTiltAndSpotlight() {
 }
 
 // --------------------------------------------------------------------------
-// 5b. Interactive Orbiting Hero Profile Bubbles — 1-Second Boost on Click
+// 5b. Interactive Hero Profile Color Aura — Hover Acceleration & Mobile Tap Burst
 // --------------------------------------------------------------------------
-function initProfileBubbles() {
-    const bubbles = Array.from(document.querySelectorAll(".floating-chip"));
-    if (!bubbles.length) return;
+function initProfileAura() {
+    const profileFrame = document.getElementById("profile-frame");
+    if (!profileFrame) return;
 
-    const BASE_SPEED = 0.32; // radians/sec (~19.6s per full revolution)
-    const BOOST_SPEED = 1.85; // radians/sec during 1-second click boost
+    let activeTimeoutId = null;
+    let isHovered = false;
 
-    let angle = -Math.PI / 4; // Start at diagonal corners
-    let currentSpeed = BASE_SPEED;
-    let targetSpeed = BASE_SPEED;
-    let boostTimeoutId = null;
-    let lastTime = performance.now();
-
-    function getRadii() {
-        if (window.innerWidth <= 768) {
-            return { rx: 88, ry: 112 };
-        }
-        return { rx: 138, ry: 142 };
+    function setAuraPlaybackRate(rate) {
+        if (typeof profileFrame.getAnimations !== "function") return;
+        const animations = profileFrame.getAnimations({ subtree: true });
+        animations.forEach((anim) => {
+            // Keep the shockwave ripple at 1x speed so its expansion curve stays natural
+            if (anim.animationName === "aura-ripple") return;
+            if (typeof anim.updatePlaybackRate === "function") {
+                anim.updatePlaybackRate(rate);
+            } else {
+                anim.playbackRate = rate;
+            }
+        });
     }
 
-    let radii = getRadii();
-    window.addEventListener(
-        "resize",
+    function triggerAuraBurst() {
+        // Restart shockwave animation if already active
+        profileFrame.classList.remove("aura-active");
+        void profileFrame.offsetWidth;
+        profileFrame.classList.add("aura-active");
+
+        setAuraPlaybackRate(4.2);
+
+        if (activeTimeoutId) {
+            clearTimeout(activeTimeoutId);
+        }
+
+        activeTimeoutId = setTimeout(() => {
+            profileFrame.classList.remove("aura-active");
+            setAuraPlaybackRate(isHovered ? 3.2 : 1);
+            activeTimeoutId = null;
+        }, 1600);
+    }
+
+    profileFrame.addEventListener("mouseenter", () => {
+        isHovered = true;
+        if (!activeTimeoutId) {
+            setAuraPlaybackRate(3.2);
+        }
+    });
+
+    profileFrame.addEventListener("mouseleave", () => {
+        isHovered = false;
+        if (!activeTimeoutId) {
+            setAuraPlaybackRate(1);
+        }
+    });
+
+    let lastTouchTime = 0;
+
+    profileFrame.addEventListener("click", () => {
+        if (performance.now() - lastTouchTime < 500) return;
+        triggerAuraBurst();
+    });
+
+    profileFrame.addEventListener(
+        "touchstart",
         () => {
-            radii = getRadii();
+            lastTouchTime = performance.now();
+            triggerAuraBurst();
         },
         { passive: true }
     );
 
-    function triggerBoost() {
-        targetSpeed = BOOST_SPEED;
-        bubbles.forEach((b) => b.classList.add("boosted"));
-
-        if (boostTimeoutId) {
-            clearTimeout(boostTimeoutId);
+    profileFrame.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            triggerAuraBurst();
         }
-
-        boostTimeoutId = setTimeout(() => {
-            targetSpeed = BASE_SPEED;
-            bubbles.forEach((b) => b.classList.remove("boosted"));
-            boostTimeoutId = null;
-        }, 1000);
-    }
-
-    bubbles.forEach((bubble) => {
-        bubble.addEventListener("click", (e) => {
-            e.stopPropagation();
-            triggerBoost();
-        });
     });
-
-    function animateOrbit(now) {
-        const dt = Math.min((now - lastTime) / 1000, 0.1);
-        lastTime = now;
-
-        // Smoothly interpolate angular velocity toward targetSpeed
-        currentSpeed += (targetSpeed - currentSpeed) * 0.14;
-        angle = (angle + currentSpeed * dt) % (Math.PI * 2);
-
-        const stepAngle = (Math.PI * 2) / bubbles.length;
-
-        for (let i = 0; i < bubbles.length; i++) {
-            const theta = angle + i * stepAngle;
-            const x = Math.cos(theta) * radii.rx;
-            const y = Math.sin(theta) * radii.ry;
-
-            bubbles[i].style.transform = `translate3d(calc(-50% + ${x.toFixed(
-                1
-            )}px), calc(-50% + ${y.toFixed(1)}px), 0)`;
-        }
-
-        requestAnimationFrame(animateOrbit);
-    }
-
-    requestAnimationFrame(animateOrbit);
 }
 
 // --------------------------------------------------------------------------
