@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jesus Gomez Martinez - Software Engineer Portfolio" />
-    <title>Jesus Gomez Martinez | Software Engineer</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <meta name="description" content="Jesus Gomez Martinez — Digital Experience & AI Solutions Specialist at Verifone | B.S. in Software Engineering Portfolio" />
+    <title>Jesus Martinez | Digital Experience &amp; AI Solutions Specialist</title>
+
+    <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+    <!-- Interactive Neural Particle Background -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <header class="navbar">
+    <!-- Ambient Cursor Glow Spotlight -->
+    <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Jesus<span>.dev</span></a>
-            
-            <nav class="nav-menu">
+            <a href="#home" class="logo" aria-label="Jesus.dev Home">
+                <span class="logo-bracket">&lt;</span>Jesus<span class="logo-accent">.ai</span><span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
                 <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -28,195 +41,540 @@
                 </ul>
             </nav>
 
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button type="button" class="cmd-trigger" id="cmd-trigger" aria-label="Open Command Palette">
+                    <ion-icon name="terminal-outline"></ion-icon>
+                    <span class="cmd-trigger-text">Command</span>
+                    <kbd class="cmd-kbd">Ctrl K</kbd>
+                </button>
+
+                <button type="button" class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
             <div class="container hero-content">
-                <div class="hero-text">
-                    <p class="subtitle">Hello, I am</p>
-                    <h1>Jesus Martinez</h1>
-                    <h2>Software Engineering Student</h2>
+                <div class="hero-text reveal">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Digital Experience &amp; AI Solutions Specialist @ <strong>Verifone</strong></span>
+                    </div>
+
+                    <p class="subtitle">Hello, I'm</p>
+                    <h1 class="hero-title">
+                        Jesus <span class="gradient-text">Martinez</span>
+                    </h1>
+
+                    <div class="typewriter-wrapper" aria-live="polite">
+                        <span class="typewriter-prefix">&gt;_</span>
+                        <span id="typewriter-text" class="typewriter-text">Digital Experience &amp; AI Solutions Specialist</span>
+                        <span class="typewriter-cursor" aria-hidden="true">|</span>
+                    </div>
+
                     <p class="description">
-                        Building logic-driven applications with a focus on accessibility, usability, and clean design.
+                        Software Engineer (<strong>B.S. in Software Engineering</strong>) crafting intelligent digital experiences, AI-powered solutions, and scalable full-stack web applications that blend logic with high-impact design.
                     </p>
+
                     <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Projects</span>
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <ion-icon name="paper-plane-outline"></ion-icon>
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <span class="metric-label">Current Role</span>
+                            <span class="metric-value">DX &amp; AI @ Verifone</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-label">Education</span>
+                            <span class="metric-value">B.S. Software Engineering</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-label">Focus</span>
+                            <span class="metric-value">Full-Stack &amp; AI Systems</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="pictures/JesusM.jpg" alt="Jesus Martinez">
+
+                <div class="hero-visual reveal reveal-delay-1">
+                    <div class="orbital-frame tilt-card" data-tilt-max="8">
+                        <div class="orbital-ring ring-1"></div>
+                        <div class="orbital-ring ring-2"></div>
+
+                        <div class="floating-chip chip-top">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                            <span>AI Solutions</span>
+                        </div>
+                        <div class="floating-chip chip-bottom-left">
+                            <ion-icon name="school-outline"></ion-icon>
+                            <span>B.S. Software Eng.</span>
+                        </div>
+                        <div class="floating-chip chip-bottom-right">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                            <span>Full-Stack Dev</span>
+                        </div>
+
+                        <div class="hero-image-inner">
+                            <img src="pictures/JesusM.jpg" alt="Jesus Martinez" />
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About Section">
+                <span class="scroll-mouse">
+                    <span class="scroll-wheel"></span>
+                </span>
+                <span class="scroll-label">Scroll to explore</span>
+            </a>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="section about-section">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text" style="max-width: 1000px;">
-                        <p>
-                            I found a passion for software when I first discovered how programming intertwines logic and creativity. 
-                            I am a Software Engineering student at <strong>Western Governors University</strong>, currently in my senior year.
-                        </p>
-                        <p>
-                            My goal is to provide high-quality products focusing on user experience. I am a detail-oriented team player based in sunny Arizona.
-                        </p>
+                <div class="section-header reveal">
+                    <span class="section-tag">// 01. PROFILE &amp; BACKGROUND</span>
+                    <h2 class="section-title">Engineering Digital &amp; AI Experiences</h2>
+                    <p class="section-subtitle">
+                        Where software engineering fundamentals meet intelligent, human-centric product design.
+                    </p>
+                </div>
+
+                <div class="about-bento">
+                    <div class="about-main-card tilt-card reveal">
+                        <div class="card-glow"></div>
+                        <div class="terminal-bar">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="terminal-title">jesus_martinez — profile.ts</span>
+                        </div>
+                        <div class="about-body">
+                            <p>
+                                I discovered my passion for software where rigorous logic and creative problem-solving intersect. Currently, I serve as a <strong>Digital Experience &amp; AI Solutions Specialist at Verifone</strong>, where I focus on elevating digital touchpoints and delivering impactful AI-driven solutions.
+                            </p>
+                            <p>
+                                I graduated with my <strong>Bachelor of Science in Software Engineering</strong> from <strong>Western Governors University</strong>. Based in sunny Arizona, I thrive on architecting end-to-end applications—from reactive TypeScript &amp; JavaScript frontends to resilient PostgreSQL &amp; Supabase backends—always prioritizing usability, performance, and clean design.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-pillars">
+                        <div class="pillar-card tilt-card reveal reveal-delay-1">
+                            <div class="card-glow"></div>
+                            <div class="pillar-icon">
+                                <ion-icon name="hardware-chip-outline"></ion-icon>
+                            </div>
+                            <div class="pillar-content">
+                                <span class="pillar-eyebrow">Verifone</span>
+                                <h3>Digital Experience &amp; AI Solutions Specialist</h3>
+                                <p>Designing intelligent workflows, AI-assisted capabilities, and seamless digital journeys that bridge complex technology with intuitive user experiences.</p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card tilt-card reveal reveal-delay-2">
+                            <div class="card-glow"></div>
+                            <div class="pillar-icon">
+                                <ion-icon name="ribbon-outline"></ion-icon>
+                            </div>
+                            <div class="pillar-content">
+                                <span class="pillar-eyebrow">Western Governors University</span>
+                                <h3>B.S. in Software Engineering</h3>
+                                <p>Graduated with a comprehensive engineering foundation spanning full-stack development, relational databases, software design patterns, and quality assurance.</p>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card tilt-card reveal reveal-delay-3">
+                            <div class="card-glow"></div>
+                            <div class="pillar-icon">
+                                <ion-icon name="layers-outline"></ion-icon>
+                            </div>
+                            <div class="pillar-content">
+                                <span class="pillar-eyebrow">Product Mindset</span>
+                                <h3>Full-Stack Architecture</h3>
+                                <p>Building production-ready apps with modern authentication (Auth0, Supabase), real-time data persistence, and responsive interfaces.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="section skills-section">
             <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <ion-icon name="logo-python"></ion-icon>
-                        <span>Python</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="logo-html5"></ion-icon>
-                        <span>HTML5</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="logo-css3"></ion-icon>
-                        <span>CSS3</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="color-palette-outline"></ion-icon>
-                        <span>Tailwind</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="logo-javascript"></ion-icon>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="logo-react"></ion-icon>
-                        <span>React</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="flask"></ion-icon> 
-                        <span>Flask</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="logo-nodejs"></ion-icon> 
-                        <span>Node.js</span>
-                    </div>
-                    <div class="skill-card">
-                        <ion-icon name="server-outline"></ion-icon> 
-                        <span>PostgreSQL</span>
+                <div class="section-header reveal">
+                    <span class="section-tag">// 02. TECHNICAL ARSENAL</span>
+                    <h2 class="section-title">Skills &amp; Technologies</h2>
+                    <p class="section-subtitle">
+                        Filter through the languages, frameworks, and cloud tools I use to build modern software.
+                    </p>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="skills-filter reveal" role="tablist" aria-label="Skill Categories">
+                    <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Stack</button>
+                    <button type="button" class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend &amp; Languages</button>
+                    <button type="button" class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend, Auth &amp; DB</button>
+                    <button type="button" class="filter-btn" data-filter="ai-tools" role="tab" aria-selected="false">AI &amp; Tooling</button>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <div class="skill-card tilt-card reveal" data-category="frontend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="code-working-outline"></ion-icon>
+                        <span class="skill-name">TypeScript</span>
+                        <span class="skill-badge">Typed JS</span>
                     </div>
 
-                    <div class="skill-card">
-                        <ion-icon name="paper-plane-outline"></ion-icon> 
-                        <span>Postman</span>
+                    <div class="skill-card tilt-card reveal" data-category="frontend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="logo-javascript"></ion-icon>
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-badge">ES6+</span>
                     </div>
-                    <div class="skill-card">
+
+                    <div class="skill-card tilt-card reveal" data-category="frontend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="logo-react"></ion-icon>
+                        <span class="skill-name">React</span>
+                        <span class="skill-badge">UI Library</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="frontend ai-tools">
+                        <div class="card-glow"></div>
+                        <ion-icon name="flash-outline"></ion-icon>
+                        <span class="skill-name">Vite</span>
+                        <span class="skill-badge">Build Tool</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="logo-nodejs"></ion-icon>
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-badge">Runtime</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="cloud-done-outline"></ion-icon>
+                        <span class="skill-name">Supabase</span>
+                        <span class="skill-badge">Auth &amp; DB</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="server-outline"></ion-icon>
+                        <span class="skill-name">PostgreSQL</span>
+                        <span class="skill-badge">Relational DB</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <span class="skill-name">Auth0</span>
+                        <span class="skill-badge">Identity</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="ai-tools">
+                        <div class="card-glow"></div>
+                        <ion-icon name="sparkles-outline"></ion-icon>
+                        <span class="skill-name">AI Solutions</span>
+                        <span class="skill-badge">Digital Exp</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="frontend backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="logo-python"></ion-icon>
+                        <span class="skill-name">Python</span>
+                        <span class="skill-badge">Backend / AI</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="frontend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="color-palette-outline"></ion-icon>
+                        <span class="skill-name">Tailwind CSS</span>
+                        <span class="skill-badge">Styling</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="frontend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="logo-html5"></ion-icon>
+                        <span class="skill-name">HTML5 &amp; CSS3</span>
+                        <span class="skill-badge">Web Core</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="backend">
+                        <div class="card-glow"></div>
+                        <ion-icon name="flask-outline"></ion-icon>
+                        <span class="skill-name">Flask</span>
+                        <span class="skill-badge">Python API</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="ai-tools">
+                        <div class="card-glow"></div>
                         <ion-icon name="logo-github"></ion-icon>
-                        <span>Git/GitHub</span>
+                        <span class="skill-name">Git &amp; GitHub</span>
+                        <span class="skill-badge">Version Control</span>
+                    </div>
+
+                    <div class="skill-card tilt-card reveal" data-category="ai-tools">
+                        <div class="card-glow"></div>
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                        <span class="skill-name">Postman</span>
+                        <span class="skill-badge">API Testing</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Featured Projects Section -->
         <section id="projects" class="section projects-section">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-header reveal">
+                    <span class="section-tag">// 03. FEATURED WORK</span>
+                    <h2 class="section-title">Flagship Projects</h2>
+                    <p class="section-subtitle">
+                        Full-stack applications engineered with secure authentication, relational databases, and interactive user interfaces.
+                    </p>
+                </div>
+
                 <div class="projects-grid">
-                    
-                    <article class="project-card">
+                    <!-- Project 1: Start A Life -->
+                    <article class="project-card tilt-card reveal" data-tilt-max="6">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <img src="pictures/lifesim.png" alt="Life Simulator Interface">
+                            <img src="pictures/lifesim.png" alt="Start A Life Simulator Interface" />
+                            <div class="project-overlay">
+                                <a href="https://www.startalife.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                                    <ion-icon name="open-outline"></ion-icon>
+                                    <span>Launch startalife.app</span>
+                                </a>
+                            </div>
+                            <span class="project-status-badge">Live Production</span>
                         </div>
+
                         <div class="project-info">
-                            <h3>Life Simulator</h3>
-                            <p>A simulation game built with JavaScript, Node.js, PostgreSQL, & Auth0.</p>
+                            <div class="project-header">
+                                <span class="project-type">Full-Stack Simulation Game</span>
+                                <h3>Start A Life</h3>
+                            </div>
+
+                            <p class="project-description">
+                                An interactive life simulator application where players navigate career paths, financial choices, and dynamic life events—backed by secure Auth0 authentication and persistent PostgreSQL state management.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">Auth0</span>
+                            </div>
+
                             <div class="project-links">
-                                <a href="https://startalife.vercel.app/" target="_blank" class="btn-small">Live Demo</a>
+                                <a href="https://www.startalife.app/" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <span>Visit Live Website</span>
+                                    <ion-icon name="arrow-up-outline" class="diagonal-arrow"></ion-icon>
+                                </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <!-- Project 2: FinTrack -->
+                    <article class="project-card tilt-card reveal reveal-delay-1" data-tilt-max="6">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <img src="pictures/counterApp.png" alt="Workout App Interface">
+                            <img src="pictures/FinTrack.png" alt="FinTrack Financial Tracker Interface" />
+                            <div class="project-overlay">
+                                <a href="https://github.com/jgomez5437/FinTrack" target="_blank" rel="noopener noreferrer" class="overlay-btn">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    <span>Explore Repository</span>
+                                </a>
+                            </div>
+                            <span class="project-status-badge badge-secondary">TypeScript + Supabase</span>
                         </div>
+
                         <div class="project-info">
-                            <h3>Workout Rep Counter</h3>
-                            <p>Track your fitness progress effortlessly.</p>
+                            <div class="project-header">
+                                <span class="project-type">Personal Finance &amp; Budgeting App</span>
+                                <h3>FinTrack</h3>
+                            </div>
+
+                            <p class="project-description">
+                                A modern financial tracking and budgeting application engineered with TypeScript and Vite, leveraging Supabase for real-time PostgreSQL database storage and end-to-end user authentication.
+                            </p>
+
+                            <div class="project-tech-stack">
+                                <span class="tech-pill">TypeScript</span>
+                                <span class="tech-pill">Vite</span>
+                                <span class="tech-pill">Supabase Auth</span>
+                                <span class="tech-pill">Supabase DB</span>
+                            </div>
+
                             <div class="project-links">
-                                <a href="https://workout-app-jesusm.netlify.app" target="_blank" class="btn-small">Live Demo</a>
+                                <a href="https://github.com/jgomez5437/FinTrack" target="_blank" rel="noopener noreferrer" class="btn-project btn-project-primary">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                    <span>View Source Code</span>
+                                </a>
                             </div>
                         </div>
                     </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="pictures/FinTrack.png" alt="FinTrack Interface">
-                        </div>
-                        <div class="project-info">
-                            <h3>FinTrack</h3>
-                            <p>Budgeting application built with Python, Tkinter, and SQLite.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/jgomez5437/FinTrack" target="_blank" class="btn-small">View Code</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="pictures/mlk.png" alt="Tribute Page Interface">
-                        </div>
-                        <div class="project-info">
-                            <h3>Tribute Page</h3>
-                            <p>A responsive tribute page design.</p>
-                            <div class="project-links">
-                                <a href="https://tribute-page-mlk.netlify.app/" target="_blank" class="btn-small">Live Demo</a>
-                            </div>
-                        </div>
-                    </article>
-
                 </div>
             </div>
         </section>
-          <div class="scroll-top-wrapper">
-              <a href="#" class="scroll-top-btn" aria-label="Back to Top">
-                  <ion-icon name="arrow-up-outline"></ion-icon>
-              </a>
-          </div>
+
+        <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-subtitle">I'm currently open to new opportunities.</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:jesusmartinez5437@gmail.com" class="contact-item">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        jesusmartinez5437@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/jesusmse/" target="_blank" class="contact-item">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/jgomez5437" target="_blank" class="contact-item">
-                        <ion-icon name="logo-github"></ion-icon>
-                        GitHub
-                    </a>
+                <div class="contact-card tilt-card reveal" data-tilt-max="4">
+                    <div class="card-glow"></div>
+                    <span class="section-tag">// 04. LET'S CONNECT</span>
+                    <h2 class="section-title">Ready to Collaborate?</h2>
+                    <p class="contact-subtitle">
+                        Whether you want to discuss AI solutions, digital experience engineering, or full-stack software opportunities—my inbox is always open.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:jesusmartinez5437@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">Email Me</span>
+                                <span class="contact-value">jesusmartinez5437@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <button type="button" class="contact-item copy-email-btn" id="copy-email-btn" data-email="jesusmartinez5437@gmail.com">
+                            <div class="contact-icon">
+                                <ion-icon name="copy-outline" id="copy-icon"></ion-icon>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">Quick Action</span>
+                                <span class="contact-value" id="copy-text">Copy Email Address</span>
+                            </div>
+                        </button>
+
+                        <a href="https://www.linkedin.com/in/jesusmse/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-icon">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">Professional Network</span>
+                                <span class="contact-value">linkedin.com/in/jesusmse</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/jgomez5437" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <div class="contact-icon">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">Code &amp; Repos</span>
+                                <span class="contact-value">github.com/jgomez5437</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Back to Top Floating Button -->
+    <a href="#home" class="scroll-top-btn" id="scroll-top-btn" aria-label="Back to Top">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+
+    <!-- Interactive Command Palette Modal (Ctrl+K) -->
+    <div class="cmd-backdrop" id="cmd-backdrop" aria-hidden="true">
+        <div class="cmd-modal" role="dialog" aria-modal="true" aria-labelledby="cmd-input">
+            <div class="cmd-search-bar">
+                <ion-icon name="search-outline"></ion-icon>
+                <input
+                    type="text"
+                    id="cmd-input"
+                    class="cmd-input"
+                    placeholder="Type a command or search (e.g., 'Start A Life', 'FinTrack', 'Email', 'Skills')..."
+                    autocomplete="off"
+                />
+                <kbd class="cmd-esc" id="cmd-close-btn">ESC</kbd>
+            </div>
+            <ul class="cmd-list" id="cmd-list" role="listbox">
+                <li class="cmd-item active" data-action="scroll" data-target="#projects" role="option">
+                    <ion-icon name="rocket-outline"></ion-icon>
+                    <span class="cmd-item-title">View Featured Projects</span>
+                    <span class="cmd-item-hint">Jump to section</span>
+                </li>
+                <li class="cmd-item" data-action="link" data-url="https://www.startalife.app/" role="option">
+                    <ion-icon name="game-controller-outline"></ion-icon>
+                    <span class="cmd-item-title">Launch Start A Life (Live App)</span>
+                    <span class="cmd-item-hint">startalife.app ↗</span>
+                </li>
+                <li class="cmd-item" data-action="link" data-url="https://github.com/jgomez5437/FinTrack" role="option">
+                    <ion-icon name="wallet-outline"></ion-icon>
+                    <span class="cmd-item-title">Open FinTrack (TypeScript + Vite + Supabase)</span>
+                    <span class="cmd-item-hint">GitHub ↗</span>
+                </li>
+                <li class="cmd-item" data-action="scroll" data-target="#about" role="option">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span class="cmd-item-title">About Jesus — Verifone &amp; B.S. Software Engineering</span>
+                    <span class="cmd-item-hint">Jump to section</span>
+                </li>
+                <li class="cmd-item" data-action="scroll" data-target="#skills" role="option">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+                    <span class="cmd-item-title">Explore Technical Skills</span>
+                    <span class="cmd-item-hint">Jump to section</span>
+                </li>
+                <li class="cmd-item" data-action="copy-email" data-email="jesusmartinez5437@gmail.com" role="option">
+                    <ion-icon name="copy-outline"></ion-icon>
+                    <span class="cmd-item-title">Copy Email Address (jesusmartinez5437@gmail.com)</span>
+                    <span class="cmd-item-hint">Clipboard</span>
+                </li>
+                <li class="cmd-item" data-action="link" data-url="https://www.linkedin.com/in/jesusmse/" role="option">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <span class="cmd-item-title">Connect on LinkedIn</span>
+                    <span class="cmd-item-hint">External ↗</span>
+                </li>
+                <li class="cmd-item" data-action="link" data-url="https://github.com/jgomez5437" role="option">
+                    <ion-icon name="logo-github"></ion-icon>
+                    <span class="cmd-item-title">Visit GitHub Profile</span>
+                    <span class="cmd-item-hint">External ↗</span>
+                </li>
+            </ul>
+            <div class="cmd-footer">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+                <span><kbd>Enter</kbd> to select</span>
+                <span><kbd>Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Jesus Gomez Martinez. Built with HTML, CSS, & JS.</p>
+        <div class="container footer-container">
+            <p>&copy; 2026 Jesus Gomez Martinez &mdash; Digital Experience &amp; AI Solutions Specialist.</p>
+            <p class="footer-hint">Press <kbd>Ctrl</kbd> + <kbd>K</kbd> anytime for quick navigation.</p>
+        </div>
     </footer>
 
     <script src="index.js"></script>
