@@ -385,7 +385,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 116px 0 70px;
+    padding: 110px 0 100px;
     position: relative;
 }
 
@@ -411,7 +411,7 @@ button {
     border-radius: var(--radius-full);
     font-size: 0.86rem;
     color: #d1fae5;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     max-width: 100%;
 }
 
@@ -451,7 +451,7 @@ button {
     font-weight: 700;
     line-height: 1.08;
     letter-spacing: -0.03em;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .typewriter-wrapper {
@@ -465,7 +465,7 @@ button {
     border: 1px solid var(--surface-border);
     padding: 10px 18px;
     border-radius: var(--radius-md);
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     min-height: 48px;
     max-width: 100%;
     overflow: hidden;
@@ -499,7 +499,7 @@ button {
     font-size: 1.08rem;
     color: var(--text-secondary);
     max-width: 600px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .hero .description strong {
@@ -511,7 +511,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
 }
 
 .btn {
@@ -764,7 +764,7 @@ button {
 /* Scroll Down Mouse Indicator */
 .scroll-down-indicator {
     position: absolute;
-    bottom: 24px;
+    bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -1849,6 +1849,16 @@ footer {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .scroll-down-indicator {
+        display: none;
+    }
+}
+
+@media (max-height: 820px) {
+    .scroll-down-indicator {
+        display: none;
     }
 }
 
