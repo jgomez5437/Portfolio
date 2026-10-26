@@ -596,20 +596,32 @@ function showToast(message) {
 function initCopyEmail() {
     const copyBtn = document.getElementById("copy-email-btn");
     const copyText = document.getElementById("copy-text");
-    if (!copyBtn) return;
 
-    copyBtn.addEventListener("click", () => {
-        const email = copyBtn.getAttribute("data-email");
-        if (!email) return;
+    if (copyBtn) {
+        copyBtn.addEventListener("click", () => {
+            const email = copyBtn.getAttribute("data-email");
+            if (!email) return;
 
-        copyToClipboard(email);
-        if (copyText) {
-            const original = copyText.textContent;
-            copyText.textContent = "Email Copied!";
-            setTimeout(() => {
-                copyText.textContent = original;
-            }, 2500);
-        }
+            copyToClipboard(email);
+            if (copyText) {
+                const original = copyText.textContent;
+                copyText.textContent = "Email Copied!";
+                setTimeout(() => {
+                    copyText.textContent = original;
+                }, 2500);
+            }
+        });
+    }
+
+    // One-click copy for Project Demo Credentials (FinTrack & Steady)
+    const credButtons = document.querySelectorAll(".copy-cred-btn");
+    credButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const val = btn.getAttribute("data-copy");
+            if (val) {
+                copyToClipboard(val);
+            }
+        });
     });
 }
 
