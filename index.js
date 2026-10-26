@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollReveal();
     initSkillsFilter();
     initTiltAndSpotlight();
+    initProfileBubbles();
     initCommandPalette();
     initCopyEmail();
     initNeuralCanvas();
@@ -357,6 +358,51 @@ function initTiltAndSpotlight() {
             card.classList.add("is-resetting");
             card.style.transform =
                 "perspective(1000px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0)";
+        });
+    });
+}
+
+// --------------------------------------------------------------------------
+// 5b. Interactive Hero Profile Bubbles — 2-Second Speed Boost on Click
+// --------------------------------------------------------------------------
+function initProfileBubbles() {
+    const bubbles = document.querySelectorAll(".floating-chip");
+    if (!bubbles.length) return;
+
+    bubbles.forEach((bubble) => {
+        let boostTimeoutId = null;
+
+        bubble.addEventListener("click", () => {
+            bubble.classList.add("boosted");
+
+            // Smoothly accelerate the active float animation from its current position
+            if (typeof bubble.getAnimations === "function") {
+                bubble.getAnimations().forEach((anim) => {
+                    if (typeof anim.updatePlaybackRate === "function") {
+                        anim.updatePlaybackRate(4.5);
+                    } else {
+                        anim.playbackRate = 4.5;
+                    }
+                });
+            }
+
+            if (boostTimeoutId) {
+                clearTimeout(boostTimeoutId);
+            }
+
+            boostTimeoutId = setTimeout(() => {
+                bubble.classList.remove("boosted");
+                if (typeof bubble.getAnimations === "function") {
+                    bubble.getAnimations().forEach((anim) => {
+                        if (typeof anim.updatePlaybackRate === "function") {
+                            anim.updatePlaybackRate(1);
+                        } else {
+                            anim.playbackRate = 1;
+                        }
+                    });
+                }
+                boostTimeoutId = null;
+            }, 2000);
         });
     });
 }
